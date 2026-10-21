@@ -640,6 +640,8 @@ public class Settings
 		private final boolean showBankPickupInfo;
 		private final boolean showUnreachableText;
 		private final boolean highlightBankPickupItems;
+		private final boolean filterBankPickupItems;
+		private final boolean autoOpenBankPickupFilter;
 		private final boolean highlightSpellbookSpells;
 		private final boolean highlightInventoryItems;
 		private final boolean showTeleportPulse;
@@ -670,6 +672,8 @@ public class Settings
 			showBankPickupInfo = effective.bool(ConfigKey.SHOW_BANK_PICKUP_INFO);
 			showUnreachableText = effective.bool(ConfigKey.SHOW_UNREACHABLE_TEXT);
 			highlightBankPickupItems = effective.bool(ConfigKey.HIGHLIGHT_BANK_PICKUP_ITEMS);
+			filterBankPickupItems = effective.bool(ConfigKey.FILTER_BANK_PICKUP_ITEMS);
+			autoOpenBankPickupFilter = effective.bool(ConfigKey.AUTO_OPEN_BANK_PICKUP_FILTER);
 			highlightSpellbookSpells = effective.bool(ConfigKey.HIGHLIGHT_SPELLBOOK_SPELLS);
 			highlightInventoryItems = effective.bool(ConfigKey.HIGHLIGHT_INVENTORY_ITEMS);
 			showTeleportPulse = effective.showTeleportPulse();

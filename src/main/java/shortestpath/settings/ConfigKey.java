@@ -96,6 +96,8 @@ public enum ConfigKey
 	SHOW_TRANSPORT_INFO("showTransportInfo", boolean.class, true, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
 	SHOW_BANK_PICKUP_INFO("showBankPickupInfo", boolean.class, false, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
 	HIGHLIGHT_BANK_PICKUP_ITEMS("highlightBankPickupItems", boolean.class, true, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
+	FILTER_BANK_PICKUP_ITEMS("filterBankPickupItems", boolean.class, true, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
+	AUTO_OPEN_BANK_PICKUP_FILTER("autoOpenBankPickupFilter", boolean.class, false, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
 	HIGHLIGHT_SPELLBOOK_SPELLS("highlightSpellbookSpells", boolean.class, true, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
 	HIGHLIGHT_INVENTORY_ITEMS("highlightInventoryItems", boolean.class, true, Coercion.BOOLEAN, Effect.DISPLAY_ONLY),
 	USE_POH("usePoh", boolean.class, false, Coercion.BOOLEAN, Effect.ROUTE_INVALIDATING),
