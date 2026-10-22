@@ -2238,6 +2238,33 @@ public class ShortestPathPanelLayoutTest
 	}
 
 	@Test
+	public void autoOpenPathItemsIsDimmedWhileTheFilterIsOff() throws Exception
+	{
+		newPanel();
+		JCheckBox autoOpen = null;
+		for (CategoryPanel category : panel.categories())
+		{
+			ShortestPathPanel.SearchRow row = rowByDisplay(category, "Auto Open Path Items");
+			if (row != null)
+			{
+				autoOpen = masterBox(row.component);
+			}
+		}
+		assertNotNull(autoOpen);
+		assertTrue("the filter is on by default", autoOpen.isEnabled());
+
+		config.set("filterBankPickupItems", false);
+		settings.onConfigChanged(event("filterBankPickupItems"));
+		flushEdt();
+		assertFalse("filter off dims Auto Open", autoOpen.isEnabled());
+
+		config.set("filterBankPickupItems", true);
+		settings.onConfigChanged(event("filterBankPickupItems"));
+		flushEdt();
+		assertTrue("filter on brings Auto Open back", autoOpen.isEnabled());
+	}
+
+	@Test
 	public void pohMasterOffDimsGroupsAndMembers() throws Exception
 	{
 		newPanel();

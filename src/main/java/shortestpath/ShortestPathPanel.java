@@ -373,7 +373,13 @@ public class ShortestPathPanel extends PluginPanel
 		bank.addRow(checkRow("showBankPickupInfo"));
 		bank.addRow(checkRow("highlightBankPickupItems"));
 		bank.addRow(checkRow("filterBankPickupItems"));
-		bank.addRow(checkRow("autoOpenBankPickupFilter"));
+		// Auto open only works while the filter is on, so dim it otherwise.
+		SearchRow autoOpenRow = checkRow("autoOpenBankPickupFilter");
+		bank.addRow(autoOpenRow);
+		Runnable applyAutoOpenEnabled = () -> applyRowDisabledState(autoOpenRow.component,
+			settings.configuredBool("filterBankPickupItems"));
+		applyAutoOpenEnabled.run();
+		registerConfigListener("filterBankPickupItems", applyAutoOpenEnabled);
 	}
 
 	private void buildPohCategory()
